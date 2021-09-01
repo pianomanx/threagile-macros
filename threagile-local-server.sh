@@ -1,0 +1,1 @@
+docker run --rm -it --shm-size=256m -p 8080:8080 --name threagile-server --mount 'type=volume,src=threagile-storage,dst=/data,readonly=false' threagile:latest -server 8080 
