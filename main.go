@@ -34,7 +34,7 @@ import (
 	// Trying to get the new macro to be imported
 	//  Likely will need to create a new repo on Github
 	//  Need to create a new macro and have it pulled from new repo
-	initiate_model "github.com/PurpleTeamAgency/threagile-macros/macros/built-in/initiate-model"
+	initiate_model "https://github.com/PurpleTeamAgency/threagile-macros/tree/main/macros/built-in/initiate-model"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
