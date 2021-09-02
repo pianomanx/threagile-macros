@@ -3,7 +3,8 @@
 ######
 FROM alpine/git as clone
 WORKDIR /app
-RUN git clone https://github.com/threagile/threagile.git
+## RUN git clone https://github.com/threagile/threagile.git
+RUN git clone https://github.com/PurpleTeamAgency/threagile-macros.git
 
 
 
@@ -13,7 +14,7 @@ RUN git clone https://github.com/threagile/threagile.git
 FROM golang as build
 ENV GO111MODULE=on
 WORKDIR /app
-COPY --from=clone /app/threagile /app
+COPY --from=clone /app/threagile-macros /app
 RUN go mod download
 RUN go version
 RUN GOOS=linux go build -a -trimpath -ldflags="-s -w -X main.buildTimestamp=$(date '+%Y%m%d%H%M%S')" -gcflags="all=-trimpath=/src" -asmflags="all=-trimpath=/src" -buildmode=plugin -o raa.so raa/raa/raa.go
