@@ -1,5 +1,4 @@
-// module github.com/threagile/threagile
-module github.com/PurpleTeamAgency/threagile-macro
+module github.com/threagile/threagile
 
 go 1.12
 

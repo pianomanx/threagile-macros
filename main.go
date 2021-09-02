@@ -32,7 +32,7 @@ import (
 	"time"
 
 	"github.com/PurpleTeamAgency/threagile-macros/colors"
-	add_build_pipeline "github.com/PurpleTeamAgency/threagile-macros/macros/built-in/add-build-pipeline"
+	add_build_pipeline "github.com/threagile/threagile/macros/built-in/add-build-pipeline"
 	add_vault "github.com/PurpleTeamAgency/threagile-macros/macros/built-in/add-vault"
 	initiate_model "github.com/PurpleTeamAgency/threagile-macros/macros/built-in/initiate-model"
 	pretty_print "github.com/PurpleTeamAgency/threagile-macros/macros/built-in/pretty-print"
