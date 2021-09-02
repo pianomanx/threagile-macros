@@ -3,7 +3,7 @@ package main
 import (
 	"sort"
 
-	"github.com/PurpleTeamAgency/threagile-macros/model"
+	"github.com/threagile/threagile/model"
 )
 
 // used from plugin caller:
