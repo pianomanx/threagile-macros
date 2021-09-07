@@ -3,8 +3,7 @@
 ######
 FROM alpine/git as clone
 WORKDIR /app
-## RUN git clone https://github.com/threagile/threagile.git
-RUN git clone https://github.com/PurpleTeamAgency/threagile-macros.git
+RUN git clone https://github.com/threagile/threagile.git
 
 
 
