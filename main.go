@@ -31,7 +31,6 @@ import (
 	"sync"
 	"time"
 
-	initiate_model "github.com/PurpleTeamAgency/threagile-macros/macros/built-in/initiate-model"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"github.com/threagile/threagile/colors"
@@ -3810,7 +3809,7 @@ func parseCommandlineArgs() {
 		fmt.Println("----------------------")
 		fmt.Println("Built-in model macros:")
 		fmt.Println("----------------------")
-		fmt.Println(initiate_model.GetMacroDetails().ID, "-->", initiate_model.GetMacroDetails().Title)
+		// fmt.Println(initiate_model.GetMacroDetails().ID, "-->", initiate_model.GetMacroDetails().Title)
 		fmt.Println(add_build_pipeline.GetMacroDetails().ID, "-->", add_build_pipeline.GetMacroDetails().Title)
 		fmt.Println(add_vault.GetMacroDetails().ID, "-->", add_vault.GetMacroDetails().Title)
 		fmt.Println(pretty_print.GetMacroDetails().ID, "-->", pretty_print.GetMacroDetails().Title)
