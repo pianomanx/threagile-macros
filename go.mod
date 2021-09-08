@@ -3,7 +3,6 @@ module github.com/threagile/threagile
 go 1.12
 
 require (
-	github.com/PurpleTeamAgency/threagile-macros v0.1
 	github.com/360EntSecGroup-Skylar/excelize/v2 v2.0.2
 	github.com/blend/go-sdk v2.0.0+incompatible // indirect
 	github.com/gin-gonic/gin v1.7.0
