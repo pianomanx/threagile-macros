@@ -1,4 +1,4 @@
-package initiate_model
+package main
 
 import (
 	"github.com/threagile/threagile/model"

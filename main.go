@@ -34,6 +34,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 	"github.com/threagile/threagile/colors"
+
+	// initiate_model "fake.localbad/macros/custom/initiate-model"
 	add_build_pipeline "github.com/threagile/threagile/macros/built-in/add-build-pipeline"
 	add_vault "github.com/threagile/threagile/macros/built-in/add-vault"
 	pretty_print "github.com/threagile/threagile/macros/built-in/pretty-print"
@@ -808,8 +810,8 @@ func doIt(inputFilename string, outputDirectory string) {
 	if len(*executeModelMacro) > 0 {
 		var macroDetails model.MacroDetails
 		switch *executeModelMacro {
-		case initiate_model.GetMacroDetails().ID:
-			macroDetails = initiate_model.GetMacroDetails()
+		// case initiate_model.GetMacroDetails().ID:
+		// 	macroDetails = initiate_model.GetMacroDetails()
 		case add_build_pipeline.GetMacroDetails().ID:
 			macroDetails = add_build_pipeline.GetMacroDetails()
 		case add_vault.GetMacroDetails().ID:
@@ -840,8 +842,8 @@ func doIt(inputFilename string, outputDirectory string) {
 		var nextQuestion model.MacroQuestion
 		for {
 			switch macroDetails.ID {
-			case initiate_model.GetMacroDetails().ID:
-				nextQuestion, err = initiate_model.GetNextQuestion()
+			// case initiate_model.GetMacroDetails().ID:
+			// 	nextQuestion, err = initiate_model.GetNextQuestion()
 			case add_build_pipeline.GetMacroDetails().ID:
 				nextQuestion, err = add_build_pipeline.GetNextQuestion()
 			case add_vault.GetMacroDetails().ID:
@@ -943,8 +945,8 @@ func doIt(inputFilename string, outputDirectory string) {
 					return
 				} else if strings.ToLower(answer) == "back" {
 					switch macroDetails.ID {
-					case initiate_model.GetMacroDetails().ID:
-						message, validResult, err = initiate_model.GoBack()
+					// case initiate_model.GetMacroDetails().ID:
+					// 	message, validResult, err = initiate_model.GoBack()
 					case add_build_pipeline.GetMacroDetails().ID:
 						message, validResult, err = add_build_pipeline.GoBack()
 					case add_vault.GetMacroDetails().ID:
@@ -968,8 +970,8 @@ func doIt(inputFilename string, outputDirectory string) {
 						}
 					}
 					switch macroDetails.ID {
-					case initiate_model.GetMacroDetails().ID:
-						message, validResult, err = initiate_model.ApplyAnswer(nextQuestion.ID, answer)
+					// case initiate_model.GetMacroDetails().ID:
+					// 	message, validResult, err = initiate_model.ApplyAnswer(nextQuestion.ID, answer)
 					case add_build_pipeline.GetMacroDetails().ID:
 						message, validResult, err = add_build_pipeline.ApplyAnswer(nextQuestion.ID, answer)
 					case add_vault.GetMacroDetails().ID:
@@ -986,8 +988,8 @@ func doIt(inputFilename string, outputDirectory string) {
 				}
 			} else {
 				switch macroDetails.ID {
-				case initiate_model.GetMacroDetails().ID:
-					message, validResult, err = initiate_model.ApplyAnswer(nextQuestion.ID, resultingMultiValueSelection...)
+				// case initiate_model.GetMacroDetails().ID:
+				// 	message, validResult, err = initiate_model.ApplyAnswer(nextQuestion.ID, resultingMultiValueSelection...)
 				case add_build_pipeline.GetMacroDetails().ID:
 					message, validResult, err = add_build_pipeline.ApplyAnswer(nextQuestion.ID, resultingMultiValueSelection...)
 				case add_vault.GetMacroDetails().ID:
@@ -1023,8 +1025,8 @@ func doIt(inputFilename string, outputDirectory string) {
 			validResult := true
 			var err error
 			switch macroDetails.ID {
-			case initiate_model.GetMacroDetails().ID:
-				changes, message, validResult, err = initiate_model.GetFinalChangeImpact(&modelInput)
+			// case initiate_model.GetMacroDetails().ID:
+			// 	changes, message, validResult, err = initiate_model.GetFinalChangeImpact(&modelInput)
 			case add_build_pipeline.GetMacroDetails().ID:
 				changes, message, validResult, err = add_build_pipeline.GetFinalChangeImpact(&modelInput)
 			case add_vault.GetMacroDetails().ID:
@@ -1061,8 +1063,8 @@ func doIt(inputFilename string, outputDirectory string) {
 				validResult := true
 				var err error
 				switch macroDetails.ID {
-				case initiate_model.GetMacroDetails().ID:
-					message, validResult, err = initiate_model.Execute(&modelInput)
+				// case initiate_model.GetMacroDetails().ID:
+				// 	message, validResult, err = initiate_model.Execute(&modelInput)
 				case add_build_pipeline.GetMacroDetails().ID:
 					message, validResult, err = add_build_pipeline.Execute(&modelInput)
 				case add_vault.GetMacroDetails().ID:
@@ -3811,7 +3813,7 @@ func parseCommandlineArgs() {
 		fmt.Println("------------------")
 		fmt.Println("Custom model macros:")
 		fmt.Println("------------------")
-		fmt.Println(initiate_model.GetMacroDetails().ID, "-->", initiate_model.GetMacroDetails().Title)
+		// fmt.Println(initiate_model.GetMacroDetails().ID, "-->", initiate_model.GetMacroDetails().Title)
 		fmt.Println()
 		fmt.Println("----------------------")
 		fmt.Println("Built-in model macros:")
