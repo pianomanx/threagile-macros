@@ -3806,10 +3806,16 @@ func parseCommandlineArgs() {
 		}
 		fmt.Println()
 		*/
+		// added in custom model macro section to print
+		fmt.Println()
+		fmt.Println("------------------")
+		fmt.Println("Custom model macros:")
+		fmt.Println("------------------")
+		fmt.Println(initiate_model.GetMacroDetails().ID, "-->", initiate_model.GetMacroDetails().Title)
+		fmt.Println()
 		fmt.Println("----------------------")
 		fmt.Println("Built-in model macros:")
 		fmt.Println("----------------------")
-		// fmt.Println(initiate_model.GetMacroDetails().ID, "-->", initiate_model.GetMacroDetails().Title)
 		fmt.Println(add_build_pipeline.GetMacroDetails().ID, "-->", add_build_pipeline.GetMacroDetails().Title)
 		fmt.Println(add_vault.GetMacroDetails().ID, "-->", add_vault.GetMacroDetails().Title)
 		fmt.Println(pretty_print.GetMacroDetails().ID, "-->", pretty_print.GetMacroDetails().Title)

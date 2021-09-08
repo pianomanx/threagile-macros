@@ -19,6 +19,8 @@ RUN go version
 RUN GOOS=linux go build -a -trimpath -ldflags="-s -w -X main.buildTimestamp=$(date '+%Y%m%d%H%M%S')" -gcflags="all=-trimpath=/src" -asmflags="all=-trimpath=/src" -buildmode=plugin -o raa.so raa/raa/raa.go
 RUN GOOS=linux go build -a -trimpath -ldflags="-s -w -X main.buildTimestamp=$(date '+%Y%m%d%H%M%S')" -gcflags="all=-trimpath=/src" -asmflags="all=-trimpath=/src" -buildmode=plugin -o dummy.so raa/dummy/dummy.go
 RUN GOOS=linux go build -a -trimpath -ldflags="-s -w -X main.buildTimestamp=$(date '+%Y%m%d%H%M%S')" -gcflags="all=-trimpath=/src" -asmflags="all=-trimpath=/src" -buildmode=plugin -o demo-rule.so risks/custom/demo/demo-rule.go
+## PLUS: Added initiate-model-macro build call
+RUN GOOS=linux go build -a -trimpath -ldflags="-s -w -X main.buildTimestamp=$(date '+%Y%m%d%H%M%S')" -gcflags="all=-trimpath=/src" -asmflags="all=-trimpath=/src" -buildmode=plugin -o initiate-model-macro.so macros/custom/initiate/initiate-model-macro.go
 RUN GOOS=linux go build -a -trimpath -ldflags="-s -w -X main.buildTimestamp=$(date '+%Y%m%d%H%M%S')" -gcflags="all=-trimpath=/src" -asmflags="all=-trimpath=/src" -o threagile
 # add the -race parameter to go build call in order to instrument with race condition detector: https://blog.golang.org/race-detector
 
@@ -43,6 +45,8 @@ COPY --from=build /app/threagile /app/threagile
 COPY --from=build /app/raa.so /app/raa.so
 COPY --from=build /app/dummy.so /app/dummy.so
 COPY --from=build /app/demo-rule.so /app/demo-rule.so
+## PLUS: Added initiate-model-macro code copy
+COPY --from=build /app/initiate-model-macro.so /app/initiate-model-macro.so
 COPY --from=build /app/LICENSE.txt /app/LICENSE.txt
 COPY --from=build /app/report/template/background.pdf /app/background.pdf
 COPY --from=build /app/support/openapi.yaml /app/openapi.yaml
