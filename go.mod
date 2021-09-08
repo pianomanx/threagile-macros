@@ -10,6 +10,6 @@ require (
 	github.com/google/uuid v1.1.1
 	github.com/jung-kurt/gofpdf v1.9.0
 	github.com/wcharczuk/go-chart v2.0.1+incompatible
-	golang.org/x/crypto v0.0.0-20200206161412-a0c6ece9d31a
+	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 	gopkg.in/yaml.v3 v3.0.0-20200506231410-2ff61e1afc86
 )
